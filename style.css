@@ -1,0 +1,166 @@
+/* General Body Styles */
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* No background here, it moves to content-area-wrapper */
+  overflow: hidden;
+}
+
+/* u {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+} */
+
+header {
+  color: #000000;
+  text-align: center;
+  padding: 0.3rem;
+  border-color: #3907ca;
+  border-width: 6px;
+  border-style: dashed;
+  border-radius: 36px;
+}
+
+/* Main 3-Column Layout */
+.main-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left Sidebar Styles */
+.sidebar {
+  flex: 0 0 260px;
+  background-color: #202123;
+  color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+#productList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#productList li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #343541;
+  border-radius: 5px;
+  display: flex;
+  /* Added for better product list item layout */
+  align-items: center;
+  /* Vertically align image and text */
+  gap: 10px;
+  /* Space between image and text */
+}
+
+#productList img {
+  max-width: 80px;
+  /* Smaller image in the list */
+  height: auto;
+  border-radius: 4px;
+}
+
+/* NEW: Wrapper for middle and right sections */
+.content-area-wrapper {
+  flex-grow: 1;
+  /* Allows it to take up all remaining horizontal space */
+  display: flex;
+  /* Makes its children (main-content & chatbot-container) flex items */
+  background-image: url('images/i2.jpg');
+  /* Your gradient image path here */
+  background-size: cover;
+  /* or contain, depending on your preference */
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+/* Center Content Styles */
+.main-content {
+  flex-grow: 1;
+  /* Takes up most of the space within content-area-wrapper */
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-right: 4px;
+  /* This should match the width of .chatbot-container */
+  box-sizing: border-box;
+  /* Remove background-image from here */
+  /* background-image: linear-gradient(to bottom right, #e9eef2, #d5dde5); */
+}
+
+/* "Card" Style for the Form */
+.form-container {
+
+
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+
+
+}
+
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+button {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  background-color: #0a74da;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0a68b4;
+}
+
+/* Right Chatbot Area */
+.chatbot-container {
+  flex: 0 0 300px;
+  /* Fixed width for the chatbot */
+  /* Remove any background from here */
+  /* background-color: transparent; */
+  /* Ensure it's transparent */
+  display: flex;
+  /* Helps ensure df-messenger is positioned correctly */
+  justify-content: flex-end;
+  /* Push chat icon to the right */
+  align-items: flex-end;
+  /* Push chat icon to the bottom */
+  padding: 20px;
+  /* Add some padding if needed around the chatbot element */
+}
+
+
+/* Dialogflow Messenger Customization */
+df-messenger {
+  --df-messenger-bot-message: #f1f1f1;
+  --df-messenger-button-titlebar-color: #0a74da;
+  --df-messenger-chat-background-color: transparent;
+  /* Make the actual chat window background transparent */
+}

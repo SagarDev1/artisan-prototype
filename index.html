@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Artisan Assistant</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <h2><u>My Products</u></h2>
+      <ul id="productList"></ul>
+    </aside>
+
+    <div class="content-area-wrapper">
+      <main class="main-content">
+        <div class="form-container">
+          <header>
+            <h1><b><i>Artisan Dashboard</i></b></h1>
+          </header>
+          <br>
+          <br>
+          <p>Add a new product to your inventory.</p>
+          <form id="uploadForm">
+            <input type="text" id="productName" placeholder="Product name" required>
+            <input type="number" id="productPrice" placeholder="Price (₹)">
+            <input type="text" id="productImageUrl" placeholder="Paste Image URL (optional)">
+            <button type="submit">Upload Product</button>
+          </form>
+        </div>
+      </main>
+
+      <aside class="chatbot-container">
+      </aside>
+    </div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger intent="WELCOME" chat-title="ArtisanAssistant" agent-id="a071ef24-ee49-44be-aa56-8080853f2964"
+    language-code="en" chat-icon="/icon2.png">
+  </df-messenger>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
